@@ -1,0 +1,18 @@
+{
+  "name": "web-node-backend",
+  "version": "1.0.0",
+  "description": "nodejs backend for web-ng-frontend",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx standard && node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wikilele",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "standard": "^14.3.3"
+  }
+}
