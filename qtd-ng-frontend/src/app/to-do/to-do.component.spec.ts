@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuoteOfTheDayComponent } from './quote-of-the-day.component';
+import { ToDoComponent } from './to-do.component';
 
-describe('QuoteOfTheDayComponent', () => {
-  let component: QuoteOfTheDayComponent;
-  let fixture: ComponentFixture<QuoteOfTheDayComponent>;
+describe('ToDoComponent', () => {
+  let component: ToDoComponent;
+  let fixture: ComponentFixture<ToDoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QuoteOfTheDayComponent ]
+      declarations: [ ToDoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QuoteOfTheDayComponent);
+    fixture = TestBed.createComponent(ToDoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

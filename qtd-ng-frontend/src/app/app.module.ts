@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { QuoteOfTheDayComponent } from './quote-of-the-day/quote-of-the-day.component';
+import { ToDoComponent } from './to-do/to-do.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuoteOfTheDayComponent
+    ToDoComponent
   ],
   imports: [
     BrowserModule,

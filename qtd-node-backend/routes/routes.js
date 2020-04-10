@@ -1,7 +1,7 @@
 // call the packages we need
 const express = require('express') // call express
 const bodyParser = require('body-parser')
-const quotesController = require('../controllers/quotes-controller.js')
+const activitiesController = require('../controllers/activities-controller.js')
 const cors = require('cors')
 
 const api = express()
@@ -17,10 +17,10 @@ api.use(bodyParser.json())
 var router = express.Router() // get an instance of the express Router
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-router.get('/quote', function (req, res) {
-  console.log(quotesController.getQuote())
-  var randQuote = quotesController.getQuote()
-  res.json({ quote: randQuote })
+router.get('/activity', function (req, res) {
+  console.log(activitiesController.getActivity())
+  var randActivity = activitiesController.getActivity()
+  res.json({ activity: randActivity })
 })
 
 // more routes for our API will happen here
