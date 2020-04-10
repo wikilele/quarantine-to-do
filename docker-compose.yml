@@ -1,0 +1,15 @@
+version: '2' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  qtd-frontend: # name of the first service
+    build: qtd-ng-frontend # specify the directory of the Dockerfile
+    ports:
+      - "4200:4200" # specify port forewarding
+    volumes:
+      - ./qtd-ng-frontend:/app
+
+  qtd-backend: #name of the second service
+    build: qtd-node-backend # specify the directory of the Dockerfile
+    ports:
+      - "4242:4242" #specify ports forewarding
