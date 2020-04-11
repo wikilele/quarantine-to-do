@@ -10,7 +10,7 @@ api.use(cors())
 api.use(bodyParser.urlencoded({ extended: true }))
 api.use(bodyParser.json())
 
-var router = express.Router() 
+var router = express.Router()
 
 // API ROUTES
 router.get('/activity', function (req, res) {
@@ -18,7 +18,7 @@ router.get('/activity', function (req, res) {
   var randActivity = activitiesController.getActivity()
   res.json({ activity: randActivity })
 })
-//=========================================================
+//= ========================================================
 
 // all of our routes will be prefixed with /api
 api.use('/api', router)
