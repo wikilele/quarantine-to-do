@@ -14,7 +14,7 @@ export class ToDoComponent implements OnInit {
   constructor(
     private http: HttpClient
   ) {
-    this.activity = "Push ROLL to get something to do!"
+    this.activity = "!push the button to get something to do!"
    }
 
   ngOnInit() {
