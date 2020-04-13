@@ -1,9 +1,32 @@
-<div class="activity-text">{{activity}}</div>
+<div class="message-text">{{message}}</div>
 
-<div (click)="getActivity()">
-    <div class="button">
+<div id="keyboard">
+  <div (click)="getActivity()">
+    <div class="button button-orange">
       <a href="#">DO IT</a>
     </div>
+  </div>
+  <div (click)="suggestActivity()">
+    <div class="button button-dark-orange">
+      <a href="#">SUGGEST</a>
+    </div>
+  </div>
+  <div (click)="shareActivityOnFacebook()">
+    <div class="button button-blue">
+      <a href="#">
+        <span class="fa fa-facebook" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+  <div (click)="shareActivityOnTwitter()">
+    <div class="button button-light-blue">
+      <a href="#">
+        <span class="fa fa-twitter" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
 </div>
-  
+
+
+
   
