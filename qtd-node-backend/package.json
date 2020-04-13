@@ -4,6 +4,7 @@
   "description": "nodejs backend for web-ng-frontend",
   "main": "index.js",
   "scripts": {
+    "prestart": "mongod --config config/mongo-config.dev.yaml",
     "start": "npx standard && node server.js",
     "test": "mocha --exit"
   },
@@ -17,9 +18,12 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mocha": "^7.1.1",
+    "mongoose": "^5.9.7",
     "standard": "^14.3.3"
   },
   "standard": {
-    "env": [ "mocha" ]
+    "env": [
+      "mocha"
+    ]
   }
 }
