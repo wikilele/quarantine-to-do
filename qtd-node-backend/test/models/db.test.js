@@ -1,5 +1,5 @@
 const chai = require('chai')
-const database = require('../models/db.js')
+const database = require('../../models/db.js')
 const fs = require('fs')
 
 describe('tests the db creation', () => {

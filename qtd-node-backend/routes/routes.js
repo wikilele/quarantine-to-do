@@ -13,10 +13,9 @@ api.use(bodyParser.json())
 var router = express.Router()
 
 // API ROUTES
-router.get('/activity', function (req, res) {
-  console.log(activitiesController.getActivity())
-  var randActivity = activitiesController.getActivity()
-  res.json({ activity: randActivity })
+router.get('/activity', async function (req, res) {
+  var randomActivity = await activitiesController.getRandomActivity()
+  res.json({ activity: randomActivity.suggestion })
 })
 //= ========================================================
 

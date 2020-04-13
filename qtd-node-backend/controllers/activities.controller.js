@@ -1,7 +1,10 @@
-const model = require('../models/activities.js')
+const db = require('../models/db.js')
 
-function getActivity () {
-  return model.activities[Math.floor(Math.random() * model.activities.length)]
+function getRandomActivity () {
+  return db.getActivities()
+    .then((activities) => {
+      return activities[Math.floor(Math.random() * activities.length)]
+    })
 }
 
-exports.getActivity = getActivity
+exports.getRandomActivity = getRandomActivity

@@ -9,7 +9,6 @@ const Activity = mongoose.model('Activity', activitySchema)
 function connect (host, port, dbName) {
   const dbUrl = `mongodb://${host}:${port}/${dbName}`
   mongoose.connection.on('error', console.error.bind(console, 'connection error:'))
-  mongoose.connection.on('open', console.error.bind(console, 'connection opened'))
   return mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
 }
 

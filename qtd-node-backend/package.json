@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "mongod --config config/mongo-config.dev.yaml",
     "start": "npx standard && node server.js",
-    "test": "mocha --exit"
+    "test": "mocha --recursive --exit"
   },
   "author": "wikilele",
   "license": "ISC",
