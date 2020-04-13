@@ -1,3 +1,8 @@
+systemLog:
+   path: logs/mongod.log
+   destination: file
+processManagement:
+   fork: true
 net:
    bindIp: 127.0.0.1
    port: 4202

@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const activitiesController = require('../controllers/activities-controller.js')
+const activitiesController = require('../controllers/activities.controller.js')
 const cors = require('cors')
 
 const api = express()

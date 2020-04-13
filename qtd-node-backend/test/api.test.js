@@ -1,4 +1,4 @@
-const app = require('../server.js')
+/* const app = require('../server.js')
 const chai = require('chai')
 const chaiHttp = require('chai-http')
 const chaiJson = require('chai-json')
@@ -18,4 +18,4 @@ describe('get actvitiry test', () => {
         done()
       })
   })
-})
+}) */
