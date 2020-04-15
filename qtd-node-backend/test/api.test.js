@@ -3,6 +3,7 @@ const db = require('../models/db.js')
 const chai = require('chai')
 const chaiHttp = require('chai-http')
 const chaiJson = require('chai-json')
+const config = require('../config/config')
 
 const { expect } = chai
 chai.use(chaiHttp)
@@ -10,7 +11,7 @@ chai.use(chaiJson)
 
 describe('get actvity test', () => {
   it('gets the activity sentence', async () => {
-    await db.connect('localhost', 4202, 'test')
+    await db.connect(config.db.host, config.db.port, 'test')
       .then(db.drop)
       .then(db.init)
 
