@@ -17,6 +17,7 @@ describe('get actvity test', () => {
     chai.request(app.api)
       .get('/api/activity')
       .end((_, res) => {
+        console.log(res.body.activity)
         expect(res).to.have.status(200)
         expect(res.body.activity).to.be.a('string')
       })

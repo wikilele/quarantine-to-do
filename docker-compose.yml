@@ -12,4 +12,4 @@ services:
   qtd-backend: #name of the second service
     build: qtd-node-backend # specify the directory of the Dockerfile
     ports:
-      - "4242:4242" #specify ports forewarding
+      - "4201:4201" #specify ports forewarding

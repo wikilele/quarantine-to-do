@@ -1,12 +1,10 @@
 const app = require('./routes/routes.js')
 const db = require('./models/db.js')
-var port = process.env.PORT || 4242 // set our port
+const config = require('./config/config')
 
-db.connect('localhost', 4202, 'qtd-mongo-db')
+db.connect(config.db.host, config.db.port, config.db.name)
   .then(db.drop)
   .then(db.init)
 
-app.api.listen(port)
-console.log('localhost:' + port)
-
-module.exports = app.api
+app.api.listen(config.api.port)
+console.log('localhost:' + config.api.port)
