@@ -1,32 +1,27 @@
 <div class="message-text">{{message}}</div>
 
 <div id="keyboard">
-  <div (click)="getActivity()">
-    <div class="button button-orange">
-      <a href="#">DO IT</a>
-    </div>
+  <div class="button button-orange" (click)="getActivity()">
+    <a href="#">DO IT</a>
   </div>
-  <div (click)="suggestActivity()">
-    <div class="button button-dark-orange">
-      <a href="#">SUGGEST</a>
+
+  <div>
+    <div class="button button-dark-orange" (click)="suggestActivity()">
+      <a href="#">
+        <span class="fa fa-envelope" aria-hidden="true"></span>
+      </a>
     </div>
-  </div>
-  <div (click)="shareActivityOnFacebook()">
-    <div class="button button-blue">
+
+    <div class="button button-blue" (click)="shareActivityOnFacebook()">
       <a href="#">
         <span class="fa fa-facebook" aria-hidden="true"></span>
       </a>
     </div>
-  </div>
-  <div (click)="shareActivityOnTwitter()">
-    <div class="button button-light-blue">
+
+    <div class="button button-light-blue" (click)="shareActivityOnTwitter()">
       <a href="#">
         <span class="fa fa-twitter" aria-hidden="true"></span>
       </a>
     </div>
   </div>
 </div>
-
-
-
-  
