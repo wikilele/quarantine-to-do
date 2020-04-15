@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-to-do',
   templateUrl: './to-do.component.html',
@@ -8,12 +9,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ToDoComponent implements OnInit {
 
   message:string;
-  url:string = 'http://localhost:4242/api/activity'
+  url:string = environment.apiUrl + '/api/activity';
   
   constructor(
     private http: HttpClient
   ) {
-    this.message = "!push the button to get something to do!"
+    this.message = "!push the button to get something to do!";
    }
 
   ngOnInit() {
@@ -28,15 +29,15 @@ export class ToDoComponent implements OnInit {
   }
 
   suggestActivity(){
-    this.message = "write an email to user@mail.com to suggest an activity"
+    this.message = "write an email to user@mail.com to suggest an activity";
   }
 
   shareActivityOnFacebook(){
-    this.message = "share on facebook"
+    this.message = "share on facebook";
   }
 
   shareActivityOnTwitter(){
-    this.message = "share on twitter"
+    this.message = "share on twitter";
   }
 
 }
