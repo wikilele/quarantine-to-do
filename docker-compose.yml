@@ -6,10 +6,15 @@ services:
     build: qtd-ng-frontend # specify the directory of the Dockerfile
     ports:
       - "4200:4200" # specify port forewarding
-    volumes:
-      - ./qtd-ng-frontend:/app
+    # volumes:
+    #   - ./qtd-ng-frontend:/app
 
   qtd-backend: #name of the second service
     build: qtd-node-backend # specify the directory of the Dockerfile
     ports:
       - "4201:4201" #specify ports forewarding
+    depends_on: 
+      - mongo
+  
+  mongo:
+    image: mongo:3.6
