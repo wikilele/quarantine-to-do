@@ -10,6 +10,7 @@ function connect (host, port, dbName) {
   const dbUrl = `mongodb://${host}:${port}/${dbName}`
   mongoose.connection.on('error', console.error.bind(console, 'connection error:'))
   return mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+    .catch((reason) => { console.log('unable to connect to ' + dbUrl) })
 }
 
 function drop () {

@@ -4,8 +4,8 @@
   "description": "nodejs backend for web-ng-frontend",
   "main": "index.js",
   "scripts": {
-    "start": "npx standard && node server.js",
-    "test": "mocha --recursive --exit"
+    "start": "node server.js",
+    "test": "npx standard && mocha --recursive --exit"
   },
   "author": "wikilele",
   "license": "ISC",
