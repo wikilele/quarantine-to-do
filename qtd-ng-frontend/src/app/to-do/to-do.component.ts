@@ -31,15 +31,6 @@ export class ToDoComponent implements OnInit {
   suggestActivity(){
     this.message = "write an email to user@mail.com to suggest an activity";
   }
-
-  shareActivityOnFacebook(){
-    this.message = "share on facebook";
-  }
-
-  shareActivityOnTwitter(){
-    this.message = "share on twitter";
-  }
-
 }
 
 

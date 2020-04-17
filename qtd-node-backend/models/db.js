@@ -13,10 +13,12 @@ function connect (host, port, dbName) {
     .catch((reason) => { console.log('unable to connect to ' + dbUrl) })
 }
 
+// delete all the activities documents from the db
 function drop () {
   return Activity.deleteMany().exec()
 }
 
+// popolate the db with the content of the opened file
 async function init () {
   var lines = fs.readFileSync('models/activities.init', 'utf-8').split('\n')
 

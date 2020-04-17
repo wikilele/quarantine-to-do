@@ -4,6 +4,7 @@ const activitiesController = require('../controllers/activities.controller.js')
 const cors = require('cors')
 
 const api = express()
+// enabling CORS requests
 api.use(cors())
 
 // this will let us get the data from a POST
