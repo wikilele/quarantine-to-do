@@ -8,32 +8,32 @@ import { environment } from '../../environments/environment';
 })
 export class ToDoComponent implements OnInit {
 
-  message:string;
-  url:string = environment.apiUrl + '/api/activity';
-  
+  message: string;
+  url: string = environment.apiUrl + '/api/activity';
+
   constructor(
     private http: HttpClient
   ) {
-    this.message = "!push the button to get something to do!";
+    this.message = '!push the button to get something to do!';
    }
 
   ngOnInit() {
-  } 
+  }
 
-  getActivity(){
-    var httpHeaders : HttpHeaders = new HttpHeaders({
+  getActivity() {
+    const httpHeaders: HttpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
     });
     this.http.get<JsonActivity>(this.url, {headers : httpHeaders})
              .subscribe(q => this.message = q.activity );
   }
 
-  suggestActivity(){
-    this.message = "write an email to user@mail.com to suggest an activity";
+  suggestActivity() {
+    this.message = 'write an email to user@mail.com to suggest an activity';
   }
 }
 
 
 interface JsonActivity  {
-  activity : string;
+  activity: string;
 }
