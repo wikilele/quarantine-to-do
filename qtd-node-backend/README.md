@@ -2,4 +2,10 @@
 
 # Quarantine To Do Backend
 
-Simple backend API using `node.js` and `express` .
+Some of the librairies used, check **package.json** for the complete list
+- backend API using `node.js` and `express` 
+- just mention `cors` for the CORS requests
+- `mocha` and `chai` are used for testing
+- `standard` is used for the checkstyle
+- `dockerfile` and `.dockerignore` are provided
+- `mongoose` is used to access the mongo db 
