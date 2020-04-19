@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 export class ToDoComponent implements OnInit {
 
   message: string;
-  url: string = environment.apiUrl + '/api/activity';
+  url: string = environment.apiUrl + 'api/activity';
 
   constructor(
     private http: HttpClient
