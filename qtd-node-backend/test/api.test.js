@@ -9,12 +9,17 @@ const { expect } = chai
 chai.use(chaiHttp)
 chai.use(chaiJson)
 
+var MockMongoose = require('mock-mongoose').MockMongoose
+var mockMongoose = new MockMongoose(db._mongoose)
+
 describe('get actvity test', () => {
   it('gets the activity sentence', async () => {
-    await db.connect(config.db.host, config.db.port, 'test')
-      .then(db.drop)
-      .then(db.init)
-
+    mockMongoose.prepareStorage().then(async function () {
+      await db.connect(config.db.host, config.db.port, 'test')
+        .then(db.drop)
+        .then(db.init)
+    })
+    
     chai.request(app.api)
       .get('/api/activity')
       .end((_, res) => {

@@ -45,3 +45,5 @@ exports.drop = drop
 exports.close = close
 exports.getActivities = getActivities
 exports.init = init
+
+exports._mongoose = mongoose
