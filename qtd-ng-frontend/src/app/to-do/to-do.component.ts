@@ -4,7 +4,7 @@ import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-to-do',
   templateUrl: './to-do.component.html',
-  styleUrls: ['./to-do.component.css']
+  styleUrls: ['./to-do.component.css', '../app.component.css']
 })
 export class ToDoComponent implements OnInit {
 
@@ -26,10 +26,6 @@ export class ToDoComponent implements OnInit {
     });
     this.http.get<JsonActivity>(this.url, {headers : httpHeaders})
              .subscribe(q => this.message = q.activity );
-  }
-
-  suggestActivity() {
-    this.message = 'write an email to user@mail.com to suggest an activity';
   }
 }
 
