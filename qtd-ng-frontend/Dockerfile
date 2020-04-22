@@ -1,24 +1,13 @@
-# Create image based on the official Node 10 image from dockerhub
 FROM node:10
-
-# Create a directory where our app will be placed
 RUN mkdir -p /app
-
-# Change directory so that our commands run inside this new directory
 WORKDIR /app
-
-# Copy dependency definitions
 COPY package*.json /app/
-
-# Install dependecies
 RUN npm install
 RUN npm install -g @angular/cli
 
 # Get all the code needed to run the app
-COPY . /app/
-
+# COPY . /app/      commented because the code is mounted in a volume
 # Expose the port the app runs in
-EXPOSE 4200
+# EXPOSE 4200       commented because the port is managed by docker-compose
 
-# Serve the app
-CMD ["npm", "start"]
+CMD ng build && node app.js

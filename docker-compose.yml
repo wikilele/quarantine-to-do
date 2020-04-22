@@ -6,6 +6,8 @@ services:
     build: qtd-ng-frontend # specify the directory of the Dockerfile
     ports:
       - "4200:4200" # specify port forwarding
+    environment:
+      NG_PORT: 4200 # default angular dev port
     volumes:        # avoids to rebuild every time something changes
        - ./qtd-ng-frontend:/app
 
@@ -18,7 +20,7 @@ services:
       DB_HOST : mongo
       DB_PORT : 27017  # default mongodb port
     volumes: 
-      - ./qtd-node-backend:/app
+      - ./qtd-node-backend:/usr/src/app
     depends_on: 
       - mongo
   
