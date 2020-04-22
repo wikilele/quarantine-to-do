@@ -7,4 +7,4 @@ db.connect(config.db.host, config.db.port, config.db.name)
   .then(db.init)
 
 app.api.listen(config.api.port)
-console.log('localhost:' + config.api.port)
+console.log('backend started at: ' + config.api.host + config.api.port)
