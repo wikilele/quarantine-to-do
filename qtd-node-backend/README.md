@@ -9,3 +9,5 @@ Some of the librairies used, check **package.json** for the complete list
 - `standard` is used for the checkstyle
 - `dockerfile` and `.dockerignore` are provided
 - `mongoose` is used to access the mongo db 
+- `mock-mongoose` to have an in-memory db for testing
+- `npm install <dependency> --save-dev` for depencencies used only during development

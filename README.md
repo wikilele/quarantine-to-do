@@ -7,5 +7,6 @@ The aim of this project is to play with the MEAN stack: Angular2, Typescript, No
 The project is a huge overkill, I know that. 
 
 - `docker-compose` is used to link the frontend, the backend and the mongo db
+    - used `volumes` to avoid rebuilding images every time
 
 ![home page](docs/homepage.png)
