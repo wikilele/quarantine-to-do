@@ -2,7 +2,15 @@ version: '2'
 
 # Define the services/containers to be run
 services:
+  api-gateway:
+    image: express-gateway
+    ports: 
+      - "8080:8080"
+    volumes: # the right directory is /var/lib/eg/
+      - ./qtd-express-gateway/config/gateway.config.yml:/var/lib/eg/gateway.config.yml
+
   qtd-frontend: # name of the service
+    container_name: qtd-frontend
     build: qtd-ng-frontend # specify the directory of the Dockerfile
     ports:
       - "4200:4200" # specify port forwarding
@@ -12,6 +20,7 @@ services:
        - ./qtd-ng-frontend:/app
 
   qtd-backend:
+    container_name: qtd-backend
     build: qtd-node-backend 
     ports:
       - "4201:4201"

@@ -1,0 +1,36 @@
+http:
+  port: 8080
+
+apiEndpoints:
+  qtd-backend:
+    host: '*'
+    paths: /api/*
+  qtd-frontend:
+    host: '*'
+    paths:
+      - /*
+
+serviceEndpoints:
+  qtd-backend:
+    url: "http://qtd-backend:4201/"
+  qtd-frontend:
+    url: "http://qtd-frontend:4200/"
+
+policies:
+  - proxy
+
+pipelines:
+  backend:
+    apiEndpoints:
+      - qtd-backend
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: qtd-backend
+  frontend:
+    apiEndpoints:
+      - qtd-frontend
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: qtd-frontend
