@@ -4,7 +4,7 @@ version: '2'
 services:
   api-gateway:
     image: express-gateway
-    ports: 
+    ports: # ports forwarding
       - "8080:8080"
     volumes: # the right directory is /var/lib/eg/
       - ./qtd-express-gateway/config/gateway.config.yml:/var/lib/eg/gateway.config.yml
@@ -12,8 +12,8 @@ services:
   qtd-frontend: # name of the service
     container_name: qtd-frontend
     build: qtd-ng-frontend # specify the directory of the Dockerfile
-    ports:
-      - "4200:4200" # specify port forwarding
+    expose: # the port is not published to the host machine
+      - "4200" 
     environment:
       NG_PORT: 4200 # default angular dev port
     volumes:        # avoids to rebuild every time something changes
@@ -22,8 +22,8 @@ services:
   qtd-backend:
     container_name: qtd-backend
     build: qtd-node-backend 
-    ports:
-      - "4201:4201"
+    expose:
+      - "4201"
     environment: 
       API_PORT : 4201
       DB_HOST : mongo
