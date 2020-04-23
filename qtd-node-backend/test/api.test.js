@@ -19,7 +19,7 @@ describe('get actvity test', () => {
         .then(db.drop)
         .then(db.init)
     })
-    
+
     chai.request(app.api)
       .get('/api/activity')
       .end((_, res) => {
