@@ -1,6 +1,6 @@
 FROM node:10
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+#  it also creates the directory
+WORKDIR /usr/src/app 
 COPY package*.json /usr/src/app/
 # not installing the devDependencies
 RUN npm install --only=prod
