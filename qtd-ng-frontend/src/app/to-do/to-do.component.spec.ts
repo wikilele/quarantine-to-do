@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
 
 import { ToDoComponent } from './to-do.component';
+import { Observable, of } from 'rxjs';
+import { JsonActivity } from '../activities.service';
 
 describe('ToDoComponent', () => {
   let component: ToDoComponent;
@@ -9,10 +10,10 @@ describe('ToDoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports : [ HttpClientModule ],
-      declarations: [ ToDoComponent ]
+      imports: [MockActivitiesService],
+      declarations: [ToDoComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -31,3 +32,9 @@ describe('ToDoComponent', () => {
     expect(compiled.querySelector('.message-text').textContent).toContain('!push the button to get something to do!');
   });
 });
+
+class MockActivitiesService {
+  getOne() : Observable<JsonActivity> {
+    return of({activity : "beautiful activity"});
+  }
+}

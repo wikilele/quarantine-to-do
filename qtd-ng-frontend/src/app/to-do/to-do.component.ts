@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../environments/environment';
+import { ActivitiesService, JsonActivity } from '../activities.service';
+
 @Component({
   selector: 'app-to-do',
   templateUrl: './to-do.component.html',
@@ -9,10 +9,10 @@ import { environment } from '../../environments/environment';
 export class ToDoComponent implements OnInit {
 
   message: string;
-  url: string = environment.apiUrl + 'api/activity';
+  
 
   constructor(
-    private http: HttpClient
+    private activitiesService: ActivitiesService
   ) {
     this.message = '!push the button to get something to do!';
    }
@@ -21,15 +21,8 @@ export class ToDoComponent implements OnInit {
   }
 
   getActivity() {
-    const httpHeaders: HttpHeaders = new HttpHeaders({
-      'Content-Type': 'application/json',
-    });
-    this.http.get<JsonActivity>(this.url, {headers : httpHeaders})
+    this.activitiesService.getOne()
              .subscribe(q => this.message = q.activity );
   }
 }
 
-
-interface JsonActivity  {
-  activity: string;
-}
