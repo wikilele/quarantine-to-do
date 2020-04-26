@@ -9,7 +9,7 @@ import { ActivitiesService, JsonActivity } from '../activities.service';
 export class ToDoComponent implements OnInit {
 
   message: string;
-  
+
 
   constructor(
     private activitiesService: ActivitiesService

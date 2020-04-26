@@ -2,7 +2,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ToDoComponent } from './to-do.component';
 import { Observable, of } from 'rxjs';
-import { JsonActivity } from '../activities.service';
+import { ActivitiesService, JsonActivity } from '../activities.service';
+
+
+class MockActivitiesService {
+  getOne(): Observable<JsonActivity> {
+    return of({ activity: 'beautiful activity' });
+  }
+}
+
 
 describe('ToDoComponent', () => {
   let component: ToDoComponent;
@@ -10,8 +18,8 @@ describe('ToDoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MockActivitiesService],
-      declarations: [ToDoComponent]
+      declarations: [ToDoComponent],
+      providers: [{ provide: ActivitiesService, useValue: new MockActivitiesService() }],
     })
       .compileComponents();
   }));
@@ -27,14 +35,15 @@ describe('ToDoComponent', () => {
   });
 
   it('should render the message', () => {
-    fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.message-text').textContent).toContain('!push the button to get something to do!');
   });
+
+  it('should render the activity', () => {
+    component.getActivity();
+    expect(component.message).toBe('beautiful activity');
+
+  });
+
 });
 
-class MockActivitiesService {
-  getOne() : Observable<JsonActivity> {
-    return of({activity : "beautiful activity"});
-  }
-}

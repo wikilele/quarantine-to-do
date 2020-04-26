@@ -13,7 +13,7 @@ export class ActivitiesService {
     private http: HttpClient
   ) { }
 
-  getOne() : Observable<JsonActivity> { 
+  getOne(): Observable<JsonActivity> {
     const httpHeaders: HttpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
     });
